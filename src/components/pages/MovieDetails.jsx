@@ -5,7 +5,8 @@ const MovieDetails = () => {
   const { movieId } = useParams();
   const [data, setData] = useState(null);
   const location = useLocation();
-  const backLinkLocationRef = useRef(location.state?.from ?? '/movies') 
+  const backLinkLocationRef = useRef(location.state?.from ?? '/');
+  
   useEffect(() => {
     const options = {
       method: 'GET',
@@ -53,10 +54,10 @@ const MovieDetails = () => {
         <p>additional information</p>
         <ul>
           <li>
-            <Link to="cast">Cast</Link>
+            <Link to="cast" state={{from: backLinkLocationRef}}>Cast</Link>
           </li>
           <li>
-            <Link to="reviews">Reviews</Link>
+            <Link to="reviews" state={{from: backLinkLocationRef}}>Reviews</Link>
           </li>
         </ul>
       </div>

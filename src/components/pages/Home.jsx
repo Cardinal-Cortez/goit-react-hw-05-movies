@@ -36,7 +36,7 @@ const Home = () => {
       <ul>
         {data.map((item) => (
             <li key={item.id}>
-            <Link to={`${item.id}`}>
+            <Link to={`movies/${item.id}`}>
               {item.title}
             </Link>
             </li>

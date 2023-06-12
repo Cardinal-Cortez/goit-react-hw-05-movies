@@ -25,13 +25,14 @@ const Cast = () => {
         console.error(error);
       });
   }, [movieId]);
+  const cast = data.cast;
 
   return (
     <div>
       <h3>Cast:</h3>
       {data && (
         <ul>
-          {data.cast.map((item) => {
+          {cast.map((item) => {
             <li>
               <img src={`https://image.tmdb.org/t/p/w200${item.poster_path}`} alt={item.title} />
               <p>Actor: {item.original_name}</p>
