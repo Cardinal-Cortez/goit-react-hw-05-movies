@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-
 const Home = () => {
   const [data, setData] = useState([]);
 
@@ -37,7 +36,7 @@ const Home = () => {
         {data.map((item) => (
             <li key={item.id}>
             <Link to={`movies/${item.id}`}>
-              {item.title}
+              {item.title ?  item.title : item.name}
             </Link>
             </li>
         ))}

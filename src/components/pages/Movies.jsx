@@ -11,7 +11,6 @@ const Movies = () => {
         e.preventDefault();
         const form = e.currentTarget;
         setSearchParams({ query: form.elements.query.value.toLowerCase() });
-        form.reset();
     };
 
     useEffect(() => {
@@ -48,7 +47,7 @@ const Movies = () => {
             <ul>
                 {movies.map((item) => (
                     <li key={item.id}>
-                        <Link to={`${item.id}`} state={{ from: location }}>{item.title}</Link>
+                        <Link to={`${item.id}`} state={{ from: location }}>{item.title ?  item.title : item.name}</Link>
                     </li>
                 ))}
             </ul>
